@@ -1,0 +1,15 @@
+<% layout('boilerplate') -%>
+
+<p>Voor uw recept in en alternatieve namen als nodig (Aardappels uit de oven -> Pommes uit de oven). U kunt meerdere suggesties scheiden met een: <b>|</b>
+
+<form action="/insert" method="post">
+
+    <ul>
+        <li><input type="text" name="name" placeholder="Naam">
+        <li><textarea name="description" placeholder="Omschrijving"></textarea>
+        <li><textarea name="ingredients" placeholder="Ingredienten"></textarea>
+        <li><textarea name="alternatives" placeholder="Alternatieve namen"></textarea>
+    </ul>
+
+    <button>Recept maken</button>
+</form>
