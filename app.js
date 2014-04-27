@@ -53,7 +53,6 @@ app.get(['/insert', '/new', '/create'], function(req, res) {
 });
 
 app.get('/bulk', function(req, res) {
-
     var recepis = require('./' + input);
 
     var args = {
@@ -108,7 +107,6 @@ app.get('/install', function(req, res) {
 app.post('/search', function(req, res) {
     var query   = req.body.query;
     var results = [];
-
 
     var lookup = {
         size : 50,
