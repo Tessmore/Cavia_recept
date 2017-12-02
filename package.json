@@ -1,29 +1,28 @@
 {
-  "name"            : "ah-recepten",
-  "version"         : "0.0.1",
-  "license"         : "MIT",
-  "author"          : "Fabien Tesselaar (fabientesselaar@gmail.com)",
-  "description"     : "Prototype to use elasticsearch AH recepi's",
-  "keywords"        : [
-                        "AH", "recepi", "suggestions"
-                      ],
-  "homepage"        : "http://svia.nl",
-  "repository"      : {
-                        "type"        : "git",
-                        "url"         : "https://github.com/Tessmore/AH_recept"
-                      },
-  "engines"         : {
-                        "node"        : ">= 0.10.22"
-                      },
-  "dependencies"    : {
-                        "express"       : "3.x",
-                        "elasticsearch" : "2.1.1",
-                        "ejs"           : "0.8.x",
-                        "ejs-locals"    : "1.0.x",
-                        "request-json"  : "0.4.x",
-                        "underscore"    : "1.6.0"
-                      },
-  "scripts"         : {
-                        "start"       : "nodemon app.js"
+  "name": "ah-recepten",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Fabien Tesselaar (fabientesselaar@gmail.com)",
+  "description": "Prototype to use elasticsearch to search for recipes",
+  "keywords": [
+    "recipe suggestions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tessmore/AH_recept"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "elasticsearch": "14.0.0",
+    "ejs": "2.5.x",
+    "ejs-locals": "1.0.x",
+    "request-json": "0.6.x",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js app.js"
   }
 }

@@ -1,4 +1,6 @@
-﻿var express = require('express');
+﻿"use strict";
+
+var express = require('express');
 var engine  = require('ejs-locals');
 
 // filename for bulk insert
@@ -10,7 +12,6 @@ var app  = express();
 
 // Express app configuration
 app.configure(function() {
-
   // Allow POST body to be submitted
   app.use(express.bodyParser());
 
@@ -34,7 +35,7 @@ var client = new elasticsearch.Client({
 
 // JSON request client, for extending the elasticsearch client.
 var request    = require('request-json');
-var raw_client = request.newClient('http://localhost:9200/' + db_name + '/');
+var raw_client = request.createClient('http://localhost:9200/' + db_name + '/');
 
 
 
@@ -77,10 +78,16 @@ app.get('/bulk', function(req, res) {
 app.get('/install', function(req, res) {
 
     client.index({
-      index: db_name,
-      type: table_name,
+      "index" : db_name,
+      "type"  : table_name,
     },
     function (err, es_res) {
+
+        if (err) {
+            console.error(err);
+        }
+
+
         client.indices.putMapping({
             index: db_name,
             type: table_name,
@@ -96,6 +103,7 @@ app.get('/install', function(req, res) {
         function (err, es_res) {
             res.json(es_res);
         });
+
     });
 });
 
@@ -129,4 +137,4 @@ app.post('/search', function(req, res) {
 
 
 app.listen(port);
-console.log("Server running at port: " + port)
+console.log("Server running at port: " + port);
