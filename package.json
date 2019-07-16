@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "express": "4.x",
-    "elasticsearch": "14.2.2",
+    "elasticsearch": "16.3.0",
     "ejs": "2.6.x",
     "ejs-locals": "1.0.x",
     "request-json": "0.6.x",
-    "underscore": "1.9.0"
+    "underscore": "1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.19.1"
   },
   "scripts": {
     "start": "node ./node_modules/nodemon/bin/nodemon.js app.js"

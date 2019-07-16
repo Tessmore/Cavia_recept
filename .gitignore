@@ -12,6 +12,6 @@ pids
 logs
 results
 package-lock.json
-
+yarn-error.log
 npm-debug.log
 node_modules/
